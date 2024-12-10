@@ -72,7 +72,7 @@ secret: "Enter_Your_Secret_Here"
 
 首先从https://sm.ms/ 中的*User*下找到*Dashboard*，在*API Token*中复制*Secret Token*
 
-之后在*./botpy/examples/plugins/img_upload.py*中，找到
+之后在* ./botpy/examples/plugins/img_upload.py *中，找到
 
 ```python
 headers = {'Authorization': 'Your_Token'}
@@ -84,7 +84,7 @@ headers = {'Authorization': 'Your_Token'}
 
 非常棒！你已经完成了全部配置过程！
 
-现在，进入*./botpy/examples/*路径，找到*client.py*，在终端输入
+现在，进入* ./botpy/examples/ *路径，找到*client.py*，在终端输入
 
 ```python
 python client.py
