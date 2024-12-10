@@ -70,7 +70,7 @@ secret: "Enter_Your_Secret_Here"
 
 *因为本项目使用的sm.ms图床，所以脚本是基于该图床返回内容格式编写，如果你想用其它图床需根据自己图床返回数据的格式更改代码内容。
 
-首先从https://sm.ms/中的*User*下找到*Dashboard*，在*API Token*中复制*Secret Token*
+首先从https://sm.ms/ 中的*User*下找到*Dashboard*，在*API Token*中复制*Secret Token*
 
 之后在*./botpy/examples/plugins/img_upload.py*中，找到
 
