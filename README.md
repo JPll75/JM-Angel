@@ -39,7 +39,13 @@ https://github.com/tencent-connect/botpy
 conda create -n chatbot
 ```
 
-或者把chatbot换成你喜欢的名字
+或者把chatbot换成你喜欢的名字，之后输入
+
+```commandline
+conda activate chatbot
+```
+
+启动环境。
 
 然后输入：
 
