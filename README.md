@@ -6,6 +6,10 @@
 
 更多功能后续完善中。
 
+### 官方仓库
+
+https://github.com/tencent-connect/botpy
+
 ### 亮点
 ·可以为不同用户单独存储待办。
 
