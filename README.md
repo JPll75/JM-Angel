@@ -55,9 +55,9 @@ conda install pip
 pip install -r requirements.txt
 ```
 
-安装所需依赖。
+安装所需软件包。
 
-*requirements.txt*内的依赖可能看起来很多，实际上大部分都是conda环境自带的，我直接把所有依赖贴上去了，因为懒（）
+*requirements.txt*内的包可能看起来很多，实际上大部分都是conda环境自带的，我直接把所有的贴上去了，因为懒（）
 
 ### 配置API
 
