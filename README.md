@@ -57,7 +57,7 @@ pip install -r requirements.txt
 
 #### (1) 更改机器人的账号密码
 
-在*./botpy/examples/config.yaml*中，找到
+在 ./botpy/examples/config.yaml 中，找到
 
 ```yaml
 appid: "Your_Bot_Id"
@@ -86,7 +86,7 @@ headers = {'Authorization': 'Your_Token'}
 
 现在，进入 ./botpy/examples/ 路径，找到*client.py*，在终端输入
 
-```python
+```powershell
 python client.py
 ```
 

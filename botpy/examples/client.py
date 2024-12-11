@@ -48,9 +48,7 @@ class MyClient(botpy.Client):
                 content=f"{result}")
 
         elif msg.startswith("/查询"):
-            # name = msg.replace("/查询", "").strip()
-            # cf_personal.get_user_data(name)
-            file_url = img_upload.upload('../examples/imgs/webpage.png')
+            file_url = img_upload.upload('../examples/imgs/img_test.jpg')  # 此处填写你要上传图片的地址
             # file_url = f"https://s21.ax1x.com/2024/12/08/pA7DmAP.jpg"  # 这里需要填写上传的资源Url
 
             messageResult = await message._api.post_group_file(
@@ -66,7 +64,7 @@ class MyClient(botpy.Client):
                 msg_id=message.id,
                 media=messageResult
             )
-            img_upload.delet_img()
+            img_upload.delet_img()  # 从图床中删除图片，防止重复上传
 
         elif msg.startswith("/待办"):
             msgs = msg.replace("/待办", "").strip()

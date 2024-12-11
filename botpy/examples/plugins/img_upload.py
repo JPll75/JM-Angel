@@ -11,7 +11,7 @@ global url_delete
 
 def upload(path):
     global url_delete
-    headers = {'Authorization': 'Your_Token'}
+    headers = {'Authorization': 'Your_Token'}  # 此处填写你的API Token
     files = {'smfile': open(path, 'rb')}
     url = 'https://sm.ms/api/v2/upload'
     res = requests.post(url, files=files, headers=headers).json()
