@@ -49,7 +49,7 @@ def insert(user_name, todo):
         if is_empty:
             todo_list.clear()
         todo_list.append(todo)
-        todo_list.append(" ")
+        # todo_list.append(" ")
         json_data = {'ToDo': todo_list}
         with open(f'..\\examples\\user_data\\{user_name}.json', 'w') as file:
             json.dump(json_data, file)

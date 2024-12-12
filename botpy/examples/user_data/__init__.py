@@ -11,10 +11,10 @@ if __name__ == "__main__":
         files = [os.path.join(base_dir, file) for file in os.listdir(base_dir)]
         for file in files:
             if file == '..\\user_data\\__init__.py':
-                print("skip init")
+                print("skip __init__.py")
                 continue
 
-            json_data = {'ToDo': ['还没有代办qwq', ' ']}
+            json_data = {'ToDo': ['还没有待办qwq']}
             with open(file, 'w') as json_file:
                 json.dump(json_data, json_file)
 

@@ -79,7 +79,7 @@ class MyClient(botpy.Client):
                 else:
                     content1 = '\n待办有如下哦：\n'
                     for todo in todo_list:
-                        todo = '\n' + todo
+                        todo = '\n' + todo + '\n'
                         content1 = content1 + todo
 
                 messageResult = await message._api.post_group_message(
