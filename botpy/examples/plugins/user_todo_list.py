@@ -124,7 +124,7 @@ def init(user_name):
     files = [os.path.join(base_dir, file) for file in os.listdir(base_dir)]
     for file in files:
         if file == f'..\\examples\\user_data\\{user_name}.json':
-            json_data = {'ToDo': ['还没有待办qwq', ' ']}
+            json_data = {'ToDo': ['还没有待办qwq']}
             with open(file, 'w') as json_file:
                 json.dump(json_data, json_file)
 
