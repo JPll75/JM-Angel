@@ -64,7 +64,7 @@ class MyClient(botpy.Client):
                 msg_id=message.id,
                 media=messageResult
             )
-            img_upload.delet_img()  # 从图床中删除图片，防止重复上传
+            img_upload.delete_img()  # 从图床中删除图片，防止重复上传
 
         elif msg.startswith("/待办"):
             msgs = msg.replace("/待办", "").strip()

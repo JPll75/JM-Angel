@@ -36,7 +36,7 @@ def upload(path):
 """
 
 
-def delet_img():
+def delete_img():
     global url_delete
     url = url_delete
     option = webdriver.ChromeOptions()
@@ -61,4 +61,4 @@ def delet_img():
 if __name__ == "__main__":
     upload('../imgs/img_test.jpg')
     time.sleep(4)
-    delet_img()
+    delete_img()
