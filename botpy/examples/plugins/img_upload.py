@@ -1,17 +1,22 @@
+import os
+import random
+
 import requests
 import urllib.request
 import webbrowser
 import json
+
+from botpy.ext.cog_yaml import read
 from selenium import webdriver
 from PIL import Image
 import time
 
 global url_delete
-
+config = read(os.path.join(os.path.dirname(__file__), "../config.yaml"))
 
 def upload(path):
     global url_delete
-    headers = {'Authorization': 'Your_Token'}  # 此处填写你的API Token
+    headers = {'Authorization': config['token']}  # 此处填写你的API Token
     files = {'smfile': open(path, 'rb')}
     url = 'https://sm.ms/api/v2/upload'
     res = requests.post(url, files=files, headers=headers).json()
@@ -57,6 +62,22 @@ def delete_img():
     使用过程中selenium报错handshake error可以忽略（
     因为我暂时没想到更好的方法访问url（捂脸）
 """
+
+"""
+获取图床的历史上传链接
+"""
+def get_upload_history():
+    headers = {'Authorization': config['token']}
+    # 定义请求的参数
+    params = { "page": "1"}
+    url = 'https://sm.ms/api/v2/upload_history'
+    res = requests.get(url , headers=headers,params=params).json()
+    data = res.get('data')
+
+    urls = [item['url'] for item in data]
+    random_item = random.choice(urls)
+
+    return random_item
 
 if __name__ == "__main__":
     upload('../imgs/img_test.jpg')

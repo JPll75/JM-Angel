@@ -9,6 +9,7 @@ from botpy.message import GroupMessage, Message
 from botpy.types.message import MarkdownPayload, MessageMarkdownParams
 from plugins import weather_api
 from plugins import img_upload
+from plugins import fortune_by_sqlite
 from plugins import user_todo_list
 
 test_config = read(os.path.join(os.path.dirname(__file__), "config.yaml"))
@@ -22,6 +23,7 @@ class MyClient(botpy.Client):
 
     async def on_group_at_message_create(self, message: GroupMessage):
         msg = message.content.strip()
+        member_openid = message.author.member_openid
         print("[Info] bot 收到消息：" + message.content)
 
         if msg == f"我喜欢你":
@@ -30,6 +32,25 @@ class MyClient(botpy.Client):
                 msg_type=0,
                 msg_id=message.id,
                 content=f"我也喜欢你")
+
+        elif msg.startswith("/今日运势"):
+
+            result = fortune_by_sqlite.get_today_fortune(member_openid)
+            file_url = img_upload.get_upload_history()
+
+            messageResult = await message._api.post_group_file(
+                group_openid=message.group_openid,
+                file_type=1,
+                url=file_url
+            )
+            # 资源上传后，会得到Media，用于发送消息
+            await message._api.post_group_message(
+                group_openid=message.group_openid,
+                msg_type=7,
+                msg_id=message.id,
+                media=messageResult,
+                content=f"{result}"
+            )
 
         elif msg.startswith("/test"):
             messageResult = await message._api.post_group_message(
