@@ -55,6 +55,7 @@ sniffio
 sortedcontainers
 soupsieve
 # sqlite
+sqlalchemy
 tk
 tqdm
 trio

@@ -16,7 +16,7 @@ config = read(os.path.join(os.path.dirname(__file__), "../config.yaml"))
 
 def upload(path):
     global url_delete
-    headers = {'Authorization': config['token']}  # 此处填写你的API Token
+    headers = {'Authorization': config['token']}
     files = {'smfile': open(path, 'rb')}
     url = 'https://sm.ms/api/v2/upload'
     res = requests.post(url, files=files, headers=headers).json()
@@ -63,21 +63,27 @@ def delete_img():
     因为我暂时没想到更好的方法访问url（捂脸）
 """
 
-"""
-获取图床的历史上传链接
-"""
+
 def get_upload_history():
     headers = {'Authorization': config['token']}
     # 定义请求的参数
     params = { "page": "1"}
     url = 'https://sm.ms/api/v2/upload_history'
     res = requests.get(url , headers=headers,params=params).json()
+    print(res)
     data = res.get('data')
 
     urls = [item['url'] for item in data]
     random_item = random.choice(urls)
 
     return random_item
+
+"""
+获取图床的历史上传链接
+调用方式：
+    从sm.ms中获取所有上传历史，
+    随机获取其中一个图片信息并返回其url
+"""
 
 if __name__ == "__main__":
     upload('../imgs/img_test.jpg')
