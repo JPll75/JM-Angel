@@ -70,7 +70,6 @@ def get_upload_history():
     params = { "page": "1"}
     url = 'https://sm.ms/api/v2/upload_history'
     res = requests.get(url , headers=headers,params=params).json()
-    print(res)
     data = res.get('data')
 
     urls = [item['url'] for item in data]
