@@ -1,3 +1,6 @@
+#机器人配置
 appid: "Your_Bot_Id"
-token: "Your_Token"
-secret: "Enter_Your_Secret_Here"
+secret: "Enter_Your_Bot_Secret_Here"
+
+# 图床配置
+picturesToken: "Your_Token"
