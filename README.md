@@ -76,8 +76,6 @@ pip install -r requirements.txt
 appid: "Your_Bot_Id"
 secret: "Enter_Your_Bot_Secret_Here"
 
-# 图床配置
-picturesToken: "Your_Token"
 ```
 
 将其中的*Your_Bot_Id*和*Enter_Your_Secret_Here*分别更改为你的机器人Apple Id和Apple Secret。需从QQ开放平台获取。
@@ -87,6 +85,8 @@ picturesToken: "Your_Token"
 \*因为本项目使用的sm.ms图床，所以脚本是基于该图床返回内容格式编写，如果你想用其它图床需根据自己图床返回数据的格式更改代码内容。
 
 首先从https://sm.ms/ 中的*User*下找到*Dashboard*，在*API Token*中复制*Secret Token*。
+
+在 ./botpy/examples/config.yaml 中，找到
 
 ```yaml
 picturesToken: "Your_Token"
