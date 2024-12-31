@@ -75,9 +75,10 @@ pip install -r requirements.txt
 在 ./botpy/examples/config.yaml 中，找到
 
 ```yaml
+#机器人配置
 appid: "Your_Bot_Id"
-token: "Your_Token"
-secret: "Enter_Your_Secret_Here"
+secret: "Enter_Your_Bot_Secret_Here"
+
 ```
 
 将其中的*Your_Bot_Id*和*Enter_Your_Secret_Here*分别更改为你的机器人Apple Id和Apple Secret。需从QQ开放平台获取。
@@ -88,8 +89,10 @@ secret: "Enter_Your_Secret_Here"
 
 首先从https://sm.ms/ 中的*User*下找到*Dashboard*，在*API Token*中复制*Secret Token*。
 
+在 ./botpy/examples/config.yaml 中，找到
+
 ```yaml
-token: "Your_Token"
+picturesToken: "Your_Token"
 ```
 
 将其替换上述的*Your_Token*。

@@ -1,2 +1,10 @@
 /.idea
-/.yaml
+#数据库文件
+*.db
+*.sqlite
+
+*.yaml
+
+#日志文件
+*.log
+

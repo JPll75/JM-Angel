@@ -1,4 +1,7 @@
 # 引入sqlalchemy依赖
+import os
+import subprocess
+
 from sqlalchemy import Column, Integer, String, Date, create_engine, text
 from sqlalchemy.orm import declarative_base, sessionmaker
 """
@@ -42,7 +45,8 @@ class SqliteSqlalchemy(object):
         self.session = sessionmaker(bind=engine)()
 
 
-
+#
+selectInit = text("SELECT name FROM sqlite_master WHERE type='table' AND name='qr_fortune';")
 # 查询 今日运势
 selectFortune = text("select * from qr_fortune  order by random() limit 1")
 #根据 id 查询是否生抽取过今日运势
@@ -103,11 +107,34 @@ def insert_fortune_log(QrFortuneLog):
     session.close()
     return ""
 
+def database_initialized():
+    session = SqliteSqlalchemy().session
+    # 检查某个表是否存在
+    table_exists  = session.execute(selectInit).fetchone()
+    if table_exists:
+        print("表已创建。")
+        return True
+    else:
+        execute_init_file()
+        print("表未创建。")
+        return False
 
 
+"""
+执行初始化文件for_init_database.py
+"""
+def execute_init_file():
+    init_file_path = os.path.join(os.path.dirname(__file__), "..\\fortune_init_data.py")
+    try:
+        # 执行初始化文件
+        subprocess.run(["python", init_file_path], check=True)
+        print("初始化文件已成功执行。")
+    except subprocess.CalledProcessError as e:
+        print(f"执行初始化文件时出错: {e}")
 
 if __name__ == '__main__':
-    result = get_today_fortune('8A91A2F3BE5B5AF3FEC97FB5AA6D9B38')
-    print(result)
+    database_initialized()
+    # result = get_today_fortune('8A91A2F3BE5B5AF3FEC97FB5AA6D9B38')
+    # print(result)
     # session.close()
 

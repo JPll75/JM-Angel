@@ -1,16 +1,11 @@
 # -*- coding: utf-8 -*-
-import asyncio
 import os
 
 import botpy
 from botpy import logging
 from botpy.ext.cog_yaml import read
-from botpy.message import GroupMessage, Message
-from botpy.types.message import MarkdownPayload, MessageMarkdownParams
-from plugins import weather_api
-from plugins import img_upload
-from plugins import fortune_by_sqlite
-from plugins import user_todo_list
+from botpy.message import GroupMessage
+from plugins import weather_api,img_upload,fortune_by_sqlite,user_todo_list
 
 test_config = read(os.path.join(os.path.dirname(__file__), "config.yaml"))
 
@@ -20,6 +15,9 @@ _log = logging.get_logger()
 class MyClient(botpy.Client):
     async def on_ready(self):
         _log.info(f"robot 「{self.robot.name}」 on_ready!")
+
+    #判断数据库初是否始化
+    fortune_by_sqlite.database_initialized()
 
     async def on_group_at_message_create(self, message: GroupMessage):
         msg = message.content.strip()

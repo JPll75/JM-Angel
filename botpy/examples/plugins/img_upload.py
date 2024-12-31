@@ -16,7 +16,7 @@ config = read(os.path.join(os.path.dirname(__file__), "../config.yaml"))
 
 def upload(path):
     global url_delete
-    headers = {'Authorization': config['token']}
+    headers = {'Authorization': config['picturesToken']}
     files = {'smfile': open(path, 'rb')}
     url = 'https://sm.ms/api/v2/upload'
     res = requests.post(url, files=files, headers=headers).json()
@@ -65,7 +65,7 @@ def delete_img():
 
 
 def get_upload_history():
-    headers = {'Authorization': config['token']}
+    headers = {'Authorization': config['picturesToken']}
     # 定义请求的参数
     params = { "page": "1"}
     url = 'https://sm.ms/api/v2/upload_history'

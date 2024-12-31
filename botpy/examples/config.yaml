@@ -1,3 +1,13 @@
-appid: "Your_Bot_Id"
-token: "Your_Token"
-secret: "Enter_Your_Secret_Here"
+##机器人配置
+#appid: "Your_Bot_Id"
+#secret: "Enter_Your_Bot_Secret_Here"
+#
+## 图床配置
+#picturesToken: "Your_Token"
+
+#机器人配置
+appid: "102557500"
+secret: "f8b4X0TxRvPtNsNsNsNsOuQwSyU1Y5c9"
+
+# 图床配置
+picturesToken : "gws0A75Q3hyDJppfG2bltc6iV7zxBwsY"
