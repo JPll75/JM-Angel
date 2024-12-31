@@ -37,7 +37,7 @@ class MyClient(botpy.Client):
 
             result = fortune_by_sqlite.get_today_fortune(member_openid)
             file_url = img_upload.get_upload_history()
-
+            # print(result)
             messageResult = await message._api.post_group_file(
                 group_openid=message.group_openid,
                 file_type=1,
