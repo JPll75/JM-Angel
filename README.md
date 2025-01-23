@@ -1,5 +1,7 @@
 # 三叶草bot
 
+## 和群u一起基于nonebot制作了三叶草bot2.0，仓库地址：https://github.com/ClovertaTheTrilobita/SanYeCao-Nonebot
+
 ## 介绍
 
 做了一个基于官方api的qq机器人demo，可以进行简单的天气查询、待办编辑、发送图片的功能。
