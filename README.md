@@ -1,6 +1,10 @@
 # 三叶草bot
 
-## 和群u一起基于nonebot制作了三叶草bot2.0，仓库地址：https://github.com/ClovertaTheTrilobita/SanYeCao-Nonebot
+## 和群u一起基于nonebot制作了三叶草bot2.0，
+
+### 最新代码&仓库地址：
+
+https://github.com/ClovertaTheTrilobita/SanYeCao-Nonebot
 
 ## 介绍
 
