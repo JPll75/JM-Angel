@@ -16,7 +16,7 @@ config = read(os.path.join(os.path.dirname(__file__), "../config.yaml"))
 
 def upload(path):
     global url_delete
-    headers = {'Authorization': config['picturesToken']}
+    headers = {'Authorization': config['cmw7ITep0BNZlx9LXkxANan0DRft7LZn']}
     files = {'smfile': open(path, 'rb')}
     url = 'https://sm.ms/api/v2/upload'
     res = requests.post(url, files=files, headers=headers).json()
